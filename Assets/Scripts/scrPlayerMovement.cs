@@ -29,10 +29,12 @@ public class scrPlayerMovement : MonoBehaviour
     public float circleRadius = 0.1f;
     //This should be the specific layers it checks for collision with
     public LayerMask Ground;
+    public LayerMask StickyLayer;
 
     //For making the player a child of the platform
     public GameObject player;
-    public GameObject platformGlue;
+    public GameObject platform;
+    public bool conectToPlatform;
     #endregion
 
     #region Non editable Vars
@@ -68,8 +70,20 @@ public class scrPlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         HandleMoving();
-
+        //This bool turns true whenever the player feet pos hits the ground
         canJump = Physics2D.OverlapCircle(feetPos.position, circleRadius, Ground, -Mathf.Infinity, Mathf.Infinity);
+        //This bool turns true whenever the player feet pos hits objects that the player is supposed to follow.
+        conectToPlatform = Physics2D.OverlapCircle(feetPos.position, circleRadius, StickyLayer, -Mathf.Infinity, Mathf.Infinity);
+
+        if (conectToPlatform)
+        {
+            //Should set the transform parent of the player to the platform if hit. Hit should move the player with the platform
+            player.transform.parent = platform.transform;
+        }
+        else if (conectToPlatform == false)
+        {
+            player.transform.parent = null;
+        }
     }
 
     #region Movement Logic
@@ -177,6 +191,11 @@ public class scrPlayerMovement : MonoBehaviour
             StopMoving();
         }
     }
-
-
+    /*private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "PlatformGlue")
+        {
+            print("Hit the platform");
+        }
+    }*/
 }
