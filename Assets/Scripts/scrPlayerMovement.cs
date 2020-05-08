@@ -29,6 +29,10 @@ public class scrPlayerMovement : MonoBehaviour
     public float circleRadius = 0.1f;
     //This should be the specific layers it checks for collision with
     public LayerMask Ground;
+
+    //For making the player a child of the platform
+    public GameObject player;
+    public GameObject platformGlue;
     #endregion
 
     #region Non editable Vars
@@ -173,29 +177,6 @@ public class scrPlayerMovement : MonoBehaviour
             StopMoving();
         }
     }
-
-    #region Collision Check
-    //Ground check
-    // Some problems: Because of the objects in the game that the player can jump on, the ground check has a tendency to set canjump to false afther colliding with these objects, even whilst colliding with the ground...
-
-    //Old buggy collision check
-    /*void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "PhysObj")
-        {
-            canJump = true;
-        }
-    }
-
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-        {
-            canJump = false;
-        }
-    }*/
-
-    #endregion
 
 
 }

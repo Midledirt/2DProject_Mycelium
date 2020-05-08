@@ -12,6 +12,7 @@ TagManager:
   - Pickup
   - UIBar
   - DispenserClogUp
+  - PlatformGlue
   layers:
   - Default
   - TransparentFX
@@ -48,4 +49,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: platform
+    uniqueID: 1172852911
     locked: 0
