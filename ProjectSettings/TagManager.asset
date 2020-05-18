@@ -13,6 +13,7 @@ TagManager:
   - UIBar
   - DispenserClogUp
   - PlatformGlue
+  - sporeDispencer
   layers:
   - Default
   - TransparentFX
