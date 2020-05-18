@@ -75,6 +75,4 @@ public class scrDetectTouch : MonoBehaviour
      
     }
 
-}
-//Next step:
-//I want to find a way to make specific obbjects know if they are touched. I want to store this in a bool, so that i can play animations, sounds etc when I touch something. 
+} 
