@@ -28,11 +28,15 @@ public class scrPlayerMovement : MonoBehaviour
     [Range(0.1f, 0.5f)]
     public float circleRadius = 0.1f;
     //This should be the specific layers it checks for collision with
+    [Tooltip("This should be set to a layer with the same name")]
     public LayerMask Ground;
+    [Tooltip("This should be set to a layer with the same name")]
     public LayerMask StickyLayer;
 
     //For making the player a child of the platform
+    [Tooltip("This should be set to the entire oPlayer object")]
     public GameObject player;
+    [Tooltip("The object in this slot should be the Platform sprite itself, else it wont work properly")]
     public GameObject platform;
     public bool conectToPlatform;
     #endregion
