@@ -11,7 +11,7 @@ public class scrPickups : MonoBehaviour
     public GameObject timer;
     [Tooltip("How much time you get back when you pick up the pickup")]
     [Range(1f, 20f)]
-    public float timeGained;
+    public float secondsGained;
 
 
     private Vector3 pos1;
@@ -43,7 +43,7 @@ public class scrPickups : MonoBehaviour
     public void destroyPickup()
     {
         //print("hit the player");
-        timer.GetComponent<scrLevelTimer>().currentTime -= timeGained;
+        timer.GetComponent<scrLevelTimer>().currentTime -= secondsGained;
 
         //Play sound
 
