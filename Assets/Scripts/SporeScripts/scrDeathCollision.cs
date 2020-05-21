@@ -7,27 +7,55 @@ public class scrDeathCollision : MonoBehaviour
 {
     private GameObject thePlayer;
 
-    public GameObject respawnPos;
+    //public GameObject respawnPos;
+
+    [SerializeField]
+    [Range(0.5f, 1f)]
+    private float collisionCircle = 0.5f;
+
+    public LayerMask playerLayer;
+
+    [Header("Spore acelleration")]
+    [Tooltip("This decides how quickly the timer will acellerate when the player stands in a spore cloud")]
+    [Range(0.5f, 10f)]
+    public float SporeCloudEffect;
 
 
     private void Start()
     {
-        thePlayer = GameObject.FindGameObjectWithTag("Player");
+        //thePlayer = GameObject.FindGameObjectWithTag("Player");
 
-        respawnPos = GameObject.FindGameObjectWithTag("RespawnPos");
+        //respawnPos = GameObject.FindGameObjectWithTag("RespawnPos");
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
+    {
+        if (Physics2D.OverlapCircle(transform.position, collisionCircle, playerLayer, -Mathf.Infinity, Mathf.Infinity))
+        {
+            axcellerateSporeOcclusion();
+            //print("Player is touching spore cloud");
+        }
+    }
+
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
             //Run the death function
-            playerDeath();
+            //playerDeath();
+            axcellerateSporeOcclusion();
+            print("Player is touching spore cloud");
         }
+    }*/
+
+
+    private void axcellerateSporeOcclusion()
+    {
+        FindObjectOfType<scrLevelTimer>().currentTime += (SporeCloudEffect * Time.deltaTime);
     }
 
 
-    private void playerDeath()
+    /*private void playerDeath()
     {
         //Reset the timer.
         FindObjectOfType<scrLevelTimer>().currentTime = 0f;
@@ -39,5 +67,5 @@ public class scrDeathCollision : MonoBehaviour
 
         //Reset the spore alpha (Just in case)
         FindObjectOfType<scrSpores>().myColor.a = 0.0f;
-    }
+    }*/
 }

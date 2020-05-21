@@ -62,10 +62,8 @@ public class scrSpores : MonoBehaviour
         FindObjectOfType<scrLevelTimer>().currentTime = 0f;
         //Stop new spores
         FindObjectOfType<scrLevelTimer>().spawnSpores = false;
-
         //Move the player back to respawn position
         thePlayer.transform.position = respawnPos.position;
-
         //Reset the spore alpha
         myColor.a = 0.0f;
     }
