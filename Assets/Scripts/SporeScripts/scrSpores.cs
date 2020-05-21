@@ -9,13 +9,16 @@ public class scrSpores : MonoBehaviour
     //Min ide: Ha en usynlig sprite på UIen, som representerer sporer. Når sporene "spawner" øker alphaen, helt frem til skjermen er dekket. Da får spilleren game over.
     //++: Endre musikk og/eller lydeffekter når sporene spawner
     //++: Gjør at spillerens maks hastighet synker etterhvert som sporene blir tykkere
-
+    [Tooltip("The respawnPos`s Z MUST be set to 0")]
+    public Transform respawnPos;
+    private GameObject thePlayer;
 
     public Image spores;
     public Color myColor;
     public bool canSpawnSpores = false;
 
-    private float deadlySporeConsentration = 0.9f;
+    //How occluded the sceen will be by the spore sprite before a reset
+    private float deadlySporeConsentration = 0.95f;
 
     [Range(0.05f, 0.1f)]
     public float sporeOcclusionSpeed;
@@ -25,7 +28,9 @@ public class scrSpores : MonoBehaviour
     {
         //spores = GetComponent<Image>();
         myColor.a = 0.0f;
-
+        //Find the player
+        thePlayer = GameObject.FindGameObjectWithTag("Player");
+        //Get the current timer (for spawning spores)
     }
 
     // Update is called once per frame
@@ -44,8 +49,24 @@ public class scrSpores : MonoBehaviour
         }
         if (myColor.a >= deadlySporeConsentration)
         {
-            SceneManager.LoadScene("DeathScene");
+            //SceneManager.LoadScene("DeathScene");
+
+            Respawn();
         }
         
+    }
+
+    private void Respawn()
+    {
+        //Reset the timer.
+        FindObjectOfType<scrLevelTimer>().currentTime = 0f;
+        //Stop new spores
+        FindObjectOfType<scrLevelTimer>().spawnSpores = false;
+
+        //Move the player back to respawn position
+        thePlayer.transform.position = respawnPos.position;
+
+        //Reset the spore alpha
+        myColor.a = 0.0f;
     }
 }

@@ -5,6 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class scrDeathCollision : MonoBehaviour
 {
+    private GameObject thePlayer;
+
+    public GameObject respawnPos;
+
+
+    private void Start()
+    {
+        thePlayer = GameObject.FindGameObjectWithTag("Player");
+
+        respawnPos = GameObject.FindGameObjectWithTag("RespawnPos");
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -17,10 +29,15 @@ public class scrDeathCollision : MonoBehaviour
 
     private void playerDeath()
     {
-        //Do something more hre? Like play animation and wait for an IEnumerator or something...
+        //Reset the timer.
+        FindObjectOfType<scrLevelTimer>().currentTime = 0f;
+        //Stop new spores
+        FindObjectOfType<scrLevelTimer>().spawnSpores = false;
 
-        //print("YouShouldBeDead");
-        //Load the death scene
-        SceneManager.LoadScene("DeathScene");
+        //Move the player back to respawn position
+        thePlayer.transform.position = respawnPos.transform.position;
+
+        //Reset the spore alpha (Just in case)
+        FindObjectOfType<scrSpores>().myColor.a = 0.0f;
     }
 }

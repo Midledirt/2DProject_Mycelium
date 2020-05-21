@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e376dcb68819e4baa7c49ea18eaf1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  respawnPos: {fileID: 0}
   spores: {fileID: 0}
   myColor: {r: 1, g: 1, b: 1, a: 1}
   canSpawnSpores: 0

@@ -2157,9 +2157,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hello! I am a text prototype, the first of my kind. My kind might guide
-    you through the game, or we might mislead and confuse you? ;) Anyway, take your
-    time, the game is paused whilst I am open...
+  m_Text: Welcome to the first level!
 --- !u!222 &655403586
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5032,6 +5030,36 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeb5d3ecb292b3a4db981f350214d43f, type: 3}
+--- !u!1 &1267690464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1267690465}
+  m_Layer: 0
+  m_Name: RespawnPos
+  m_TagString: RespawnPos
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1267690465
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267690464}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -31.92, y: -3.94, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1344354288}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1284206219
 GameObject:
   m_ObjectHideFlags: 0
@@ -5258,6 +5286,11 @@ PrefabInstance:
       propertyPath: sporeOcclusionSpeed
       value: 0.0909
       objectReference: {fileID: 0}
+    - target: {fileID: 7476921200922515034, guid: ad09d698e42bf29479edda576ab1daa7,
+        type: 3}
+      propertyPath: respawnPos
+      value: 
+      objectReference: {fileID: 1267690465}
     - target: {fileID: 7476921200922515035, guid: ad09d698e42bf29479edda576ab1daa7,
         type: 3}
       propertyPath: sporeDispencer
@@ -5275,6 +5308,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad09d698e42bf29479edda576ab1daa7, type: 3}
+--- !u!4 &1344354288 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7476921200922515032, guid: ad09d698e42bf29479edda576ab1daa7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1344354287}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1404521655
 GameObject:
   m_ObjectHideFlags: 0
@@ -5852,76 +5891,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1344354287}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1628842945
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1628842946}
-  - component: {fileID: 1628842948}
-  - component: {fileID: 1628842947}
-  m_Layer: 0
-  m_Name: ahhhhVictory
-  m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1628842946
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628842945}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 47.58, y: 1.96, z: -3837.9932}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 21
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1628842947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628842945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f08e3b3caaf17f448b719734443b90b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!61 &1628842948
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628842945}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 1.2714214, y: -0.26861}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.5428429, y: 4.724724}
-  m_EdgeRadius: 0
 --- !u!1 &1704619754 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4567658546102473516, guid: 54e8f3327056ebb459f837ccc092d379,

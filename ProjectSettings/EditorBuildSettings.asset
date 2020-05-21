@@ -12,8 +12,20 @@ EditorBuildSettings:
     path: Assets/Scenes/GameLevels/TestScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/GameLevels/IntroLevel.unity
+    guid: a75e56a8dd69c8f43a9e55408ad0d224
+  - enabled: 1
     path: Assets/Scenes/GameLevels/Level1.unity
     guid: e28ff7a2a45c8a149970f9df68aa80c7
+  - enabled: 1
+    path: Assets/Scenes/GameLevels/Level2.unity
+    guid: 4c3452c1fcd23704da26fb15da47c15c
+  - enabled: 1
+    path: Assets/Scenes/GameLevels/Level3.unity
+    guid: 40fb947340b9c4948bc100307a1f25f1
+  - enabled: 1
+    path: Assets/Scenes/GameLevels/BossLevel.unity
+    guid: 95b5f81f1647a474ca13b4ff3d637485
   - enabled: 1
     path: Assets/Scenes/UIScenes/DeathScene.unity
     guid: b68b41bf2c2060e46b8ff07800ee0d68

@@ -2077,9 +2077,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hello! I am a text prototype, the first of my kind. My kind might guide
-    you through the game, or we might mislead and confuse you? ;) Anyway, take your
-    time, the game is paused whilst I am open...
+  m_Text: I think this is level 2, if my memory is 2 be trusted...
 --- !u!222 &655403586
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3576,6 +3574,36 @@ RectTransform:
   m_AnchoredPosition: {x: -3.1899414, y: 1.3800049}
   m_SizeDelta: {x: -700.38, y: -44.73001}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &917408325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 917408326}
+  m_Layer: 0
+  m_Name: RespawnPos
+  m_TagString: RespawnPos
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &917408326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917408325}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -31.7, y: -3.64, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1344354288}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &921849770
 GameObject:
   m_ObjectHideFlags: 0
@@ -3927,12 +3955,12 @@ PrefabInstance:
     - target: {fileID: 5650286488328331536, guid: cdadaf9d4ab57ff458ab14ebd6bdaaa6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.32
+      value: -42.22
       objectReference: {fileID: 0}
     - target: {fileID: 5650286488328331536, guid: cdadaf9d4ab57ff458ab14ebd6bdaaa6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.07
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 5650286488328331536, guid: cdadaf9d4ab57ff458ab14ebd6bdaaa6,
         type: 3}
@@ -5173,6 +5201,11 @@ PrefabInstance:
       propertyPath: sporeOcclusionSpeed
       value: 0.0909
       objectReference: {fileID: 0}
+    - target: {fileID: 7476921200922515034, guid: ad09d698e42bf29479edda576ab1daa7,
+        type: 3}
+      propertyPath: respawnPos
+      value: 
+      objectReference: {fileID: 917408326}
     - target: {fileID: 7476921200922515035, guid: ad09d698e42bf29479edda576ab1daa7,
         type: 3}
       propertyPath: sporeDispencer
@@ -5190,6 +5223,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad09d698e42bf29479edda576ab1daa7, type: 3}
+--- !u!4 &1344354288 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7476921200922515032, guid: ad09d698e42bf29479edda576ab1daa7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1344354287}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1404521655
 GameObject:
   m_ObjectHideFlags: 0
@@ -5722,6 +5761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08e3b3caaf17f448b719734443b90b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TheSceneToLoad: 5
 --- !u!61 &1628842948
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6487,7 +6527,7 @@ PrefabInstance:
     - target: {fileID: 3558388097669670614, guid: 65812e18dd0084d4496a722ebbb2529b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.29
+      value: -2.61
       objectReference: {fileID: 0}
     - target: {fileID: 3558388097669670614, guid: 65812e18dd0084d4496a722ebbb2529b,
         type: 3}
