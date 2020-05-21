@@ -67,4 +67,14 @@ public class scrSpores : MonoBehaviour
         //Reset the spore alpha
         myColor.a = 0.0f;
     }
+    /*IEnumerator onDeath()
+    {
+
+
+        //yield return new WaitForSeconds(10);
+
+
+
+        yield break;
+    }*/
 }
