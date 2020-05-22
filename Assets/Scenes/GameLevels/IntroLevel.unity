@@ -2293,6 +2293,16 @@ PrefabInstance:
       propertyPath: circleRadius
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3356663288820214425, guid: c6164f19697d33d45a17e5009ea93fd1,
+        type: 3}
+      propertyPath: PlayerLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 3356663288820214425, guid: c6164f19697d33d45a17e5009ea93fd1,
+        type: 3}
+      propertyPath: theNextScene
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: c6164f19697d33d45a17e5009ea93fd1, type: 3}

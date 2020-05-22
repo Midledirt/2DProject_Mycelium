@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class scrSceneTransition : MonoBehaviour
 {
-    [Tooltip("Adjust the sizr of the collision area")]
+    [Tooltip("Adjust the size of the collision area")]
     [SerializeField]
     [Range(0.5f, 2f)]
     private float circleRadius = 0.5f;
@@ -15,6 +15,7 @@ public class scrSceneTransition : MonoBehaviour
     [Range(2, 6)]
     public int theNextScene;
 
+    [Tooltip("Set this to the layer named Player")]
     public LayerMask PlayerLayer;
     private void Update()
     {
