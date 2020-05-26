@@ -17,11 +17,16 @@ public class scrSceneTransition : MonoBehaviour
 
     [Tooltip("Set this to the layer named Player")]
     public LayerMask PlayerLayer;
+    public Animator levelTransition;
+
+    //How long the Ienumerator waits before transitioning to the next level
+    private float animationTimer = 1f;
+
     private void Update()
     {
         if (Physics2D.OverlapCircle(transform.position, circleRadius, PlayerLayer, -Mathf.Infinity, Mathf.Infinity))
         {
-            NextLevel();
+            StartCoroutine(loadTheLevel());
         }
     }
 
@@ -29,5 +34,16 @@ public class scrSceneTransition : MonoBehaviour
     {
         //print("Lets go to the next level");
         SceneManager.LoadScene(theNextScene);
+    }
+
+    IEnumerator loadTheLevel()
+    {
+        //Play Animation
+        levelTransition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(animationTimer);
+
+        //Load Level
+        NextLevel();
     }
 }
