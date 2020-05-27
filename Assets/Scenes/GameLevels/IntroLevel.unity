@@ -994,6 +994,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad09d698e42bf29479edda576ab1daa7, type: 3}
+--- !u!114 &1377923535 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2083310374690869713, guid: 702d8c7bef5f7b64d9112198b13a8442,
+    type: 3}
+  m_PrefabInstance: {fileID: 2083310373665795197}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f6b38d462dfc241a4350be83640830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1432616230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1500,6 +1512,12 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeb5d3ecb292b3a4db981f350214d43f, type: 3}
+--- !u!1 &1825070416 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2533750331443090098, guid: 702d8c7bef5f7b64d9112198b13a8442,
+    type: 3}
+  m_PrefabInstance: {fileID: 2083310373665795197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1852303375
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,6 +2157,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1435909598175147926, guid: 702d8c7bef5f7b64d9112198b13a8442,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1377923535}
+    - target: {fileID: 1435909598175147926, guid: 702d8c7bef5f7b64d9112198b13a8442,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackButton
+      objectReference: {fileID: 0}
     - target: {fileID: 2083310372911712546, guid: 702d8c7bef5f7b64d9112198b13a8442,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -2423,7 +2451,7 @@ PrefabInstance:
         type: 3}
       propertyPath: settingsMenuUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1825070416}
     - target: {fileID: 2083310374690869718, guid: 702d8c7bef5f7b64d9112198b13a8442,
         type: 3}
       propertyPath: m_Name
