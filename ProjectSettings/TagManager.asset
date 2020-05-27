@@ -16,6 +16,7 @@ TagManager:
   - sporeDispencer
   - LevelTracker
   - RespawnPos
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
