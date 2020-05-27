@@ -50,11 +50,12 @@ public class scrLevelTimer : MonoBehaviour
             {
                 currentTime += Time.deltaTime;
             }
-            else if (currentTime >= levelTimer)
-            {
-                currentTime = levelTimer;
-                spawnSpores = true;
-            }
+            
+        }
+        if (currentTime >= levelTimer)
+        {
+            currentTime = levelTimer;
+            spawnSpores = true;
         }
         setCurrentTimer(currentTime);
 
@@ -69,15 +70,6 @@ public class scrLevelTimer : MonoBehaviour
     public void setCurrentTimer(float currentTime)
     {
         slider.value = currentTime;
-    }
-
-    IEnumerator increaseBar()
-    {
-
-
-
-
-        yield return null;
     }
 
 }

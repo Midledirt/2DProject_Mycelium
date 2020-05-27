@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 20
-  maxWalkSpeed: 10
+  maxWalkSpeed: 7
   minspeed: 0
   acceleration: 0.264
   deAcceleration: 30

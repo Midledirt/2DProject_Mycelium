@@ -24,6 +24,9 @@ public class scrSporeDispencer : MonoBehaviour
     [Tooltip("What layer to check for collisions on")]
     public LayerMask cloggObjectLayer;
 
+    [Tooltip("Should containt the part of this prefab that has the animator on it")]
+    public Animator sporeanimation;
+
     public void Start()
     {
         //This should be set to true at the start of the level
@@ -59,11 +62,21 @@ public class scrSporeDispencer : MonoBehaviour
         {
             //This is where we might deactivate animations or particle effects
             dispencingSpore = false;
+            //Animate
+            if (sporeanimation != null)
+            {
+                sporeanimation.SetBool("DispencingSpore", false);
+            }
         }
         else
         {
             //This is where we might activate animations or particle effects
             dispencingSpore = true;
+            //Animate
+            if (sporeanimation != null)
+            {
+                sporeanimation.SetBool("DispencingSpore", true);
+            }
         }
     }
 
