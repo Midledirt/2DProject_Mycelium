@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7476921200922515034}
   m_Layer: 0
   m_Name: oGame
-  m_TagString: Untagged
+  m_TagString: oGame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPos: {fileID: 0}
+  resetItems: 0
   spores: {fileID: 0}
   myColor: {r: 1, g: 1, b: 1, a: 1}
   canSpawnSpores: 0

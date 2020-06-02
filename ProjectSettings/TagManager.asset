@@ -17,6 +17,7 @@ TagManager:
   - LevelTracker
   - RespawnPos
   - MovingPlatform
+  - oGame
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,7 @@ public class scrWhenTouched : MonoBehaviour
 {
     public bool isTouched;
     private float colorSwapDuration;
+    [Tooltip("How long the color swap lasts when this object is touched")]
     public float defaultDuration = 1f;
     Renderer getTheRenderer;
     public Animator myAnimator;

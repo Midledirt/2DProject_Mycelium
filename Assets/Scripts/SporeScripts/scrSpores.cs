@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class scrSpores : MonoBehaviour
 {
-    //Min ide: Ha en usynlig sprite på UIen, som representerer sporer. Når sporene "spawner" øker alphaen, helt frem til skjermen er dekket. Da får spilleren game over.
-    //++: Endre musikk og/eller lydeffekter når sporene spawner
-    //++: Gjør at spillerens maks hastighet synker etterhvert som sporene blir tykkere
-    [Tooltip("The respawnPos`s Z MUST be set to 0")]
+    [Tooltip("The respawnPos`s Z(axis) MUST be set to 0")]
     public Transform respawnPos;
     private GameObject thePlayer;
+
+    //List for resetting items during respawn
+    //GameObject[] PickupsInTheScene;
+    [HideInInspector]
+    public bool resetItems = false;
 
     public Image spores;
     public Color myColor;
@@ -24,13 +26,19 @@ public class scrSpores : MonoBehaviour
     public float sporeOcclusionSpeed;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        resetItems = false;
+    }
     void Start()
     {
         //spores = GetComponent<Image>();
         myColor.a = 0.0f;
         //Find the player
         thePlayer = GameObject.FindGameObjectWithTag("Player");
-        //Get the current timer (for spawning spores)
+        
+        //Find all the pickups in the scene and store it in this list
+        //PickupsInTheScene = GameObject.FindGameObjectsWithTag("Pickup");
     }
 
     // Update is called once per frame
@@ -58,10 +66,19 @@ public class scrSpores : MonoBehaviour
 
     private void Respawn()
     {
+        //Reset items
+        StartCoroutine(ResetTheItems());
         //Reset the timer.
         FindObjectOfType<scrLevelTimer>().currentTime = 0f;
         //Stop new spores
         FindObjectOfType<scrLevelTimer>().spawnSpores = false;
+
+        //Respawn items
+        /*foreach(GameObject @object in PickupsInTheScene)
+        {
+            @object.GetComponent<scrPickups>().isactive = true;
+        }*/
+
         //Move the player back to respawn position
         thePlayer.transform.position = respawnPos.position;
         //Reset the spore alpha
@@ -77,4 +94,10 @@ public class scrSpores : MonoBehaviour
 
         yield break;
     }*/
+    IEnumerator ResetTheItems()
+    {
+        resetItems = true;
+        yield return new WaitForSeconds(0.1f);
+        resetItems = false;
+    }
 }

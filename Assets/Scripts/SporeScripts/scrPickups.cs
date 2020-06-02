@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class scrPickups : MonoBehaviour
 {
-    [Tooltip("Find and drag the player in the scene into this slot, if missing")]
+    [Tooltip("Find and drag the player in the scene into this slot, if missing. IT SHOULD NO LONGER BE NECESSARY; ITS DONE THROUGH CODE NOW")]
     public GameObject thePlayer;
     public GameObject pickup;
     [Tooltip("The object with the timer script is oGame, drag it into this slot")]
@@ -13,6 +13,12 @@ public class scrPickups : MonoBehaviour
     [Range(1f, 20f)]
     public float secondsGained;
 
+    //Bools for turning the pickup on or off
+    [HideInInspector]
+    public bool isactive = true;
+    private bool checkIfRespawn;
+    private GameObject oGame;
+   
 
     private Vector3 pos1;
     private Vector3 pos2;
@@ -23,18 +29,38 @@ public class scrPickups : MonoBehaviour
     {
         pos1 = transform.position;
         pos2 = transform.position + travelDistance;
+        isactive = true;
+        checkIfRespawn = false;
+        //Find the specific instance of oGame in order to get its scrSpores.
+        oGame = GameObject.FindGameObjectWithTag("oGame");
     }
 
     private void Update()
     {
-        //This code is from this site https://answers.unity.com/questions/690884/how-to-move-an-object-along-x-axis-between-two-poi.html
+        //Move items
         transform.position = Vector3.Lerp(pos1, pos2, (Mathf.Sin(speed * Time.time) + 1.0f) / 2.0f);
+
+        //check for the resetItems bool
+        checkIfRespawn = oGame.GetComponent<scrSpores>().resetItems;
+
+        if (checkIfRespawn == true)
+        {
+            //Set isactive to true if we are respawning
+            isactive = true;
+        }
+
+        if (isactive == true)
+        {
+            //Have the sprite renderer turned on
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        }
+
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && isactive == true)
         {
             destroyPickup();
         }
@@ -42,6 +68,8 @@ public class scrPickups : MonoBehaviour
 
     public void destroyPickup()
     {
+        //Turn off the sprite renderer
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
         //print("hit the player");
         timer.GetComponent<scrLevelTimer>().currentTime -= secondsGained;
 
@@ -49,6 +77,8 @@ public class scrPickups : MonoBehaviour
 
         //PLay awesome animation
 
-        Object.Destroy(pickup);
+        //Turn pickup off
+        isactive = false;
+        //Object.Destroy(pickup);
     }
 }
