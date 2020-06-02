@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class scrActivatePlatform : MonoBehaviour
 {
+    [Tooltip("Adjust this to change how long the platform stays active")]
     [Range(1f, 10f)]
     public float platformTimer = 1f;
+    [HideInInspector]
     public bool isTouched;
     [Tooltip("This can be any cube with a 2D collider, as the mesh should be turned invisible.")]
     public GameObject platform;
@@ -15,7 +17,13 @@ public class scrActivatePlatform : MonoBehaviour
 
     //Animation
     public Animator MushroomAnimator;
-    // Start is called before the first frame update
+
+    private void OnDrawGizmos()
+    {
+        //Draw a gismos version of the platform for better illustration
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(platformPlacemeent.transform.position, platform.transform.localScale);
+    }
     void Start()
     {
         //platform.SetActive(true);
