@@ -7,12 +7,6 @@ public class scrSporeDispencer : MonoBehaviour
     //Call this from the timer script. If this is false, stop the timer.
     public bool dispencingSpore = false;
 
-    //Make multiple spore dispensers per level work, and have it so that for each occluded spore dispencer, the spore dispencerscript slows down:
-    //Make a list of total amount of spore dispencers.
-    //When occluded, subtract 1 from that list
-    //Have the proggression of spore be "the current number"/sporeDispencers * (active)sporeDispencers. IF all are active (lets say there are 4) the math will be
-    //(current number / 4) * 4. If two are occluded, it will be (current number /4) * 2.
-
     [SerializeField]
     [Tooltip("This object should be the sporeDispencer itself")]
     private Transform cloggObject;

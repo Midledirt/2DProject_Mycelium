@@ -5,7 +5,7 @@ using UnityEngine;
 public class scrActivatePlatform : MonoBehaviour
 {
     [Tooltip("Adjust this to change how long the platform stays active")]
-    [Range(1f, 10f)]
+    [Range(1f, 60f)]
     public float platformTimer = 1f;
     [HideInInspector]
     public bool isTouched;

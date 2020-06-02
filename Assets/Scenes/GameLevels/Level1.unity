@@ -401,8 +401,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -57, y: 236}
-  m_SizeDelta: {x: 103.3, y: 91.5}
+  m_AnchoredPosition: {x: -70.98, y: 227.7}
+  m_SizeDelta: {x: 141.96, y: 133.59}
   m_Pivot: {x: 0.50000006, y: 0.49999994}
 --- !u!114 &78683486
 MonoBehaviour:
@@ -424,13 +424,13 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.40392157}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.40392157}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.50980395}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
+    m_FadeDuration: 0.3
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -4838,7 +4838,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 583847061741309793, guid: 560a9e0fd43d0fc4bb3c8f92dfebffe3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 560a9e0fd43d0fc4bb3c8f92dfebffe3, type: 3}
 --- !u!1 &1068759803
 GameObject:
@@ -5092,12 +5093,22 @@ PrefabInstance:
     - target: {fileID: 64886054020433933, guid: 560a9e0fd43d0fc4bb3c8f92dfebffe3,
         type: 3}
       propertyPath: m_Name
-      value: Ground (7)
+      value: Ground (Provides Collider1)
       objectReference: {fileID: 0}
     - target: {fileID: 64886054020433933, guid: 560a9e0fd43d0fc4bb3c8f92dfebffe3,
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 583847061741309793, guid: 560a9e0fd43d0fc4bb3c8f92dfebffe3,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 20.384007
+      objectReference: {fileID: 0}
+    - target: {fileID: 583847061741309793, guid: 560a9e0fd43d0fc4bb3c8f92dfebffe3,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 61.248016
       objectReference: {fileID: 0}
     - target: {fileID: 2411439813146554090, guid: 560a9e0fd43d0fc4bb3c8f92dfebffe3,
         type: 3}
@@ -7423,7 +7434,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 583847061741309793, guid: 560a9e0fd43d0fc4bb3c8f92dfebffe3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 560a9e0fd43d0fc4bb3c8f92dfebffe3, type: 3}
 --- !u!1001 &1461087346
 PrefabInstance:
@@ -7852,12 +7864,22 @@ PrefabInstance:
     - target: {fileID: 64886054020433933, guid: 560a9e0fd43d0fc4bb3c8f92dfebffe3,
         type: 3}
       propertyPath: m_Name
-      value: Ground (5)
+      value: Ground (Provides Collider)
       objectReference: {fileID: 0}
     - target: {fileID: 64886054020433933, guid: 560a9e0fd43d0fc4bb3c8f92dfebffe3,
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 583847061741309793, guid: 560a9e0fd43d0fc4bb3c8f92dfebffe3,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 20.445297
+      objectReference: {fileID: 0}
+    - target: {fileID: 583847061741309793, guid: 560a9e0fd43d0fc4bb3c8f92dfebffe3,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 61.370598
       objectReference: {fileID: 0}
     - target: {fileID: 2411439813146554090, guid: 560a9e0fd43d0fc4bb3c8f92dfebffe3,
         type: 3}
@@ -8656,7 +8678,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 583847061741309793, guid: 560a9e0fd43d0fc4bb3c8f92dfebffe3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 560a9e0fd43d0fc4bb3c8f92dfebffe3, type: 3}
 --- !u!1001 &1870119585
 PrefabInstance:
@@ -8940,7 +8963,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 583847061741309793, guid: 560a9e0fd43d0fc4bb3c8f92dfebffe3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 560a9e0fd43d0fc4bb3c8f92dfebffe3, type: 3}
 --- !u!1001 &1988873271
 PrefabInstance:
