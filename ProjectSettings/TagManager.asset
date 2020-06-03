@@ -18,6 +18,7 @@ TagManager:
   - RespawnPos
   - MovingPlatform
   - oGame
+  - Destructable
   layers:
   - Default
   - TransparentFX

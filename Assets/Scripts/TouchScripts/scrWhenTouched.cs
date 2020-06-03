@@ -9,6 +9,7 @@ public class scrWhenTouched : MonoBehaviour
     [Tooltip("How long the color swap lasts when this object is touched")]
     public float defaultDuration = 0.1f;
     Renderer getTheRenderer;
+    [Tooltip("Assign the animator found on this object")]
     public Animator myAnimator;
 
     // Start is called before the first frame update

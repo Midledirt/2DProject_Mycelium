@@ -20,6 +20,8 @@ public class scrDeathCollision : MonoBehaviour
     [Range(0.5f, 10f)]
     public float SporeCloudEffect;
 
+    private bool thisIsActive;
+
 
     private void Start()
     {
@@ -30,7 +32,10 @@ public class scrDeathCollision : MonoBehaviour
 
     private void Update()
     {
-        if (Physics2D.OverlapCircle(transform.position, collisionCircle, playerLayer, -Mathf.Infinity, Mathf.Infinity))
+        //Check if this object "exists"
+        thisIsActive = this.GetComponent<scrTouchToDestroy>().isActive;
+
+        if (Physics2D.OverlapCircle(transform.position, collisionCircle, playerLayer, -Mathf.Infinity, Mathf.Infinity) && thisIsActive == true)
         {
             axcellerateSporeOcclusion();
             //print("Player is touching spore cloud");
