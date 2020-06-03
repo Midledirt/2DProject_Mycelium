@@ -17,6 +17,7 @@ public class scrTouchToDestroy : MonoBehaviour
     [Header("Set health")]
     [Range(1, 50)]
     private int health = 5;
+    private int currentHealth;
 
     [SerializeField]
     [Range(1, 5)]
@@ -30,6 +31,7 @@ public class scrTouchToDestroy : MonoBehaviour
 
     void Start()
     {
+        currentHealth = health;
         isTouched = false;
         isActive = true;
         checkIfRespawn = false;
@@ -43,6 +45,8 @@ public class scrTouchToDestroy : MonoBehaviour
         if (checkIfRespawn == true)
         {
             isActive = true;
+            //Reset the health
+            currentHealth = health;
         }
         //Check if we are touching the object, and it is visible in the game
         if (isTouched == true && isActive == true)
@@ -59,11 +63,11 @@ public class scrTouchToDestroy : MonoBehaviour
     private void TakeDamage(int damageTaken)
     {
         //Reduce health
-        health -= damageTaken;
+        currentHealth -= damageTaken;
         //Animate
         StartCoroutine(onTakeDamge());
         //Kill object if health is 0
-        if (health <= 0)
+        if (currentHealth <= 0)
         {
             DestroyObject();
         }
@@ -81,9 +85,9 @@ public class scrTouchToDestroy : MonoBehaviour
     IEnumerator onTakeDamge()
     {
         getRenderer.material.SetColor("_Color", Color.red);
-        animator.SetBool("isTouched", true);
+        //animator.SetBool("isTouched", true);
         yield return new WaitForSeconds(0.1f);
-        animator.SetBool("isTouched", false);
+        //animator.SetBool("isTouched", false);
         getRenderer.material.SetColor("_Color", Color.white);
     }
 }

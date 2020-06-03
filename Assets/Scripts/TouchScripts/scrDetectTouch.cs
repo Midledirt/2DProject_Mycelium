@@ -69,6 +69,10 @@ public class scrDetectTouch : MonoBehaviour
                 {
                     touchedObject.GetComponent<scrTouchToDestroy>().isTouched = true;
                 }
+                else if (touchedObject.tag == "Boss")
+                {
+                    touchedObject.GetComponent<scrBoss>().isTouched = true;
+                }
                 else
                 {
                     return;
@@ -132,6 +136,10 @@ public class scrDetectTouch : MonoBehaviour
                 else if (touchedObject.tag == "Destructable")
                 {
                     touchedObject.GetComponent<scrTouchToDestroy>().isTouched = true;
+                }
+                else if (touchedObject.tag == "Boss")
+                {
+                    touchedObject.GetComponent<scrBoss>().isTouched = true;
                 }
                 else
                 {

@@ -19,6 +19,7 @@ TagManager:
   - MovingPlatform
   - oGame
   - Destructable
+  - Boss
   layers:
   - Default
   - TransparentFX

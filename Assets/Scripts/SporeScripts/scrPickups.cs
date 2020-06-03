@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class scrPickups : MonoBehaviour
 {
-    [Tooltip("Find and drag the player in the scene into this slot, if missing. IT SHOULD NO LONGER BE NECESSARY; ITS DONE THROUGH CODE NOW")]
+    [Tooltip("Find and drag the player in the scene into this slot, if missing.")]
     public GameObject thePlayer;
     public GameObject pickup;
     [Tooltip("The object with the timer script is oGame, drag it into this slot")]
