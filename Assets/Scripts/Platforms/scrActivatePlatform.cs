@@ -18,6 +18,9 @@ public class scrActivatePlatform : MonoBehaviour
     //Animation
     public Animator MushroomAnimator;
 
+    //Prevent the player from being able to que upp several mushroom activations
+    private bool canBeActivated;
+
     private void OnDrawGizmos()
     {
         //Draw a gismos version of the platform for better illustration
@@ -26,6 +29,7 @@ public class scrActivatePlatform : MonoBehaviour
     }
     void Start()
     {
+        canBeActivated = true;
         //platform.SetActive(true);
         isTouched = false;
         //platform.SetActive(true);
@@ -34,23 +38,30 @@ public class scrActivatePlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isTouched && instantiatedPlatform == null)
+        if (isTouched == true && instantiatedPlatform == null && canBeActivated == true)
         {
-            //Make the touched animation start.
-            if (MushroomAnimator != null)
+            if (canBeActivated == false)
             {
-                MushroomAnimator.SetBool("MushroomTouched", true);
+                //Stop the coroutine from running twice
+                return;
             }
-            StartCoroutine(tempPlatform());
-            //print(transform.name + "is activated");
-            //reset touch to false
-            isTouched = false;
-        }
-        else if (isTouched && instantiatedPlatform != null)
-        {
-            return;
-            //Destroy(instantiatedPlatform);
-            //StopCoroutine(tempPlatform());
+            else 
+            {
+                //Prevent multiple activations before the start of the coroutine... Does not work properly. I think it is because (if you tap quickly), you can queue upp two
+                //Platforms before the next frame, which is when the canBeActivated bool is set to false... 
+                canBeActivated = false;
+                //reset touch to false
+                isTouched = false;
+
+                //Make the touched animation start.
+                if (MushroomAnimator != null)
+                {
+                    MushroomAnimator.SetBool("MushroomTouched", true);
+                }
+                StartCoroutine(tempPlatform());
+                //print(transform.name + "is activated");
+            }
+
         }
     }
 
@@ -82,5 +93,7 @@ public class scrActivatePlatform : MonoBehaviour
             //StopCoroutine(tempPlatform());
             yield return null;
         }
+        yield return new WaitForSeconds(0.1f);
+        canBeActivated = true;
     }
 }
