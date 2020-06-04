@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UIScenes/VictoryScreen.unity
     guid: bc40df15d074df04bb63292f3c5c68ec
+  - enabled: 1
+    path: Assets/Scenes/UIScenes/EndCredits.unity
+    guid: be9b4e91826e83d4eb86a47d39cd2246
   m_configObjects: {}

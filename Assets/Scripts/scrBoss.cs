@@ -73,7 +73,7 @@ public class scrBoss : MonoBehaviour
         //Fade to white
         yield return new WaitForSeconds(2);
         //Load victory screen
-        SceneManager.LoadScene("VictoryScreen");
+        SceneManager.LoadScene("EndCredits");
     }
     IEnumerator damageEffect()
     {
