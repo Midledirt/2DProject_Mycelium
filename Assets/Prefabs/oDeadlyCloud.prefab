@@ -162,6 +162,8 @@ MonoBehaviour:
   isTouched: 0
   isActive: 0
   health: 5
+  hasDeathAnimation: 1
+  animationTimer: 0.9
   damageOnTouch: 1
   animator: {fileID: 6671418546905508590}
   getRenderer: {fileID: 3558388097669670615}
