@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 430cc3ef41990df46a90315ddaff6d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 18
+  jumpForce: 20
   maxWalkSpeed: 7
   minspeed: 0
   acceleration: 0.264
