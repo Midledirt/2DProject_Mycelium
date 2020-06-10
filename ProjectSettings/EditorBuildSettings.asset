@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UIScenes/StartScene.unity
     guid: ab2c8195f6f36e049810780e3e526265
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameLevels/TestScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
@@ -26,7 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameLevels/BossLevel.unity
     guid: 95b5f81f1647a474ca13b4ff3d637485
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/UIScenes/DeathScene.unity
     guid: b68b41bf2c2060e46b8ff07800ee0d68
   - enabled: 1
@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UIScenes/EndCredits.unity
     guid: be9b4e91826e83d4eb86a47d39cd2246
+  - enabled: 0
+    path: Assets/Scenes/GameLevels/DeveloperScene.unity
+    guid: c800b40f33e3dc14bb110f4a1d7df77f
   m_configObjects: {}
