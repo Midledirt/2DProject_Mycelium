@@ -70,6 +70,8 @@ public class scrTouchToDestroy : MonoBehaviour
 
     private void TakeDamage(int damageTaken)
     {
+        //PlaySound
+        FindObjectOfType<scrAudioManager>().PlaySound("CloudPopSound");
         //Reduce health
         currentHealth -= damageTaken;
         //Animate

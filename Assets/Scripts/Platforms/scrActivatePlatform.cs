@@ -74,7 +74,10 @@ public class scrActivatePlatform : MonoBehaviour
             //Instantiate a temporary platform at selected location
         
             instantiatedPlatform = Instantiate(platform, platformPlacemeent.transform.position, Quaternion.identity);
-        
+
+            //Play sound
+            FindObjectOfType<scrAudioManager>().PlaySound("MushroomSound");
+
             //platform.SetActive(true);
 
             yield return new WaitForSeconds(platformTimer);
