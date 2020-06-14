@@ -28,6 +28,7 @@ public class scrOcclusionRespawn : MonoBehaviour
         {
             //Set this object back to its start position
             transform.position = originalSpawnPoint.position;
+            return;
         }
     }
 }

@@ -55,8 +55,20 @@ public class scrPlayerMovement : MonoBehaviour
 
     #endregion
 
+    #region Animation vars
+    //Turns true if we are in the air
+    private bool isInAir;
+    //Turns true if we are moving left or right
+    private bool isMoving;
+
+    #endregion
+
     void Start()
     {
+        //Set moving to false
+        isInAir = false;
+        isMoving = false;
+
         rigid = GetComponent<Rigidbody2D>();
 
         dontMove = true;
