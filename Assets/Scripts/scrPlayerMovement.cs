@@ -60,9 +60,19 @@ public class scrPlayerMovement : MonoBehaviour
     private bool isInAir;
     //Turns true if we are moving left or right
     private bool isMoving;
+    [Tooltip("Drag the animator found on the player onto this")]
+    public Animator playerAnimator;
+
+    private bool jumpAnimReset = false;
+
+    //Flipping the character
+    private SpriteRenderer spriteRenderer;
 
     #endregion
-
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
     void Start()
     {
         //Set moving to false
@@ -85,6 +95,27 @@ public class scrPlayerMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
+        #region Animation
+        //Update the animation bools
+        if (isInAir == true)
+        {
+            playerAnimator.SetBool("isInAir", true);
+        }
+        else if (!isInAir)
+        {
+            playerAnimator.SetBool("isInAir", false);
+        }
+
+        if (isMoving == true)
+        {
+            playerAnimator.SetBool("isMoving", true);
+        }
+        else if (!isMoving)
+        {
+            playerAnimator.SetBool("isMoving", false);
+        }
+
+        #endregion
         HandleMoving();
         //This bool turns true whenever the player feet pos hits the ground
         canJump = Physics2D.OverlapCircle(feetPos.position, circleRadius, Ground, -Mathf.Infinity, Mathf.Infinity);
@@ -99,6 +130,11 @@ public class scrPlayerMovement : MonoBehaviour
         else if (conectToPlatform == false)
         {
             player.transform.parent = null;
+        }
+        //End the jump animation
+        if (canJump == true && jumpAnimReset == true)
+        {
+            isInAir = false;
         }
     }
 
@@ -115,10 +151,24 @@ public class scrPlayerMovement : MonoBehaviour
             if (moveLeft)
             {
                 MoveLeft();
+                //Animation
+                isMoving = true;
+                //Flip character
+                if (spriteRenderer != null)
+                {
+                    spriteRenderer.flipX = true;
+                }
             }
             else if (!moveLeft)
             {
                 MoveRight();
+                //Animation
+                isMoving = true;
+                //Flip character
+                if (spriteRenderer != null)
+                {
+                    spriteRenderer.flipX = false;
+                }
             }
         }
     }
@@ -131,12 +181,18 @@ public class scrPlayerMovement : MonoBehaviour
     public void DontAllowMovement()
     {
         dontMove = true;
+        //Animation
+        isMoving = false;
     }
     public void Jump()
     {
         if (canJump) //Can jump is the bool checking for collision
         {
+            jumpAnimReset = false;
             rigid.velocity = new Vector2(rigid.velocity.x, jumpForce);
+            //Animate
+            isInAir = true;
+            StartCoroutine(JumpCountdown());
         }
     }
     public void ExitJump()
@@ -206,6 +262,11 @@ public class scrPlayerMovement : MonoBehaviour
         {
             StopMoving();
         }
+    }
+    IEnumerator JumpCountdown()
+    {
+        yield return new WaitForSeconds(0.1f);
+        jumpAnimReset = true;
     }
     /*private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 657681619026917479}
   - component: {fileID: 657681618310327956}
   - component: {fileID: 657681618310327957}
+  - component: {fileID: 143584125514522805}
   m_Layer: 0
   m_Name: oPlayer
   m_TagString: Player
@@ -117,6 +118,7 @@ MonoBehaviour:
   platform: {fileID: 0}
   conectToPlatform: 0
   canJump: 0
+  playerAnimator: {fileID: 143584125514522805}
 --- !u!50 &657681618310327956
 Rigidbody2D:
   serializedVersion: 4
@@ -164,6 +166,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9587563, y: 4.825198}
   m_EdgeRadius: 0
+--- !u!95 &143584125514522805
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657681618310327955}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9817801dcf6b444449b273c3846b3a62, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &657681618858941115
 GameObject:
   m_ObjectHideFlags: 0
