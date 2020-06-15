@@ -17,9 +17,9 @@ public class scrOcclusionRespawn : MonoBehaviour
         oGame = GameObject.FindGameObjectWithTag("oGame");
 
         //Set respawn to false
-        checkIfRespawn = false;
+        //checkIfRespawn = false;
     }
-    void Update()
+    /*void Update()
     {
         //The reset items function is called when the game restarts, thus we know the game is restarting when we get this component
         checkIfRespawn = oGame.GetComponent<scrSpores>().resetItems;
@@ -30,5 +30,10 @@ public class scrOcclusionRespawn : MonoBehaviour
             transform.position = originalSpawnPoint.position;
             return;
         }
+    }*/
+    public void ResetLocation()
+    {
+        // Set this object back to its start position
+        transform.position = originalSpawnPoint.position;
     }
 }
