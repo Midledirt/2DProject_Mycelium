@@ -258,8 +258,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'You did a fantastic job saving the ecosystem or something. I am sure you`re
-    proud. The frogs thank you. But don`t expect anything in return. '
+  m_Text: 'You did a fantastic job saving the ecosystem, or something. The frogs
+    thank you... Just don`t expect anything in return. '
 --- !u!222 &302715932
 CanvasRenderer:
   m_ObjectHideFlags: 0
