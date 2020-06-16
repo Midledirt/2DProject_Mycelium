@@ -5281,8 +5281,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -12, y: -2.9000244}
+  m_SizeDelta: {x: 213.6, y: 199.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1131675333
 CanvasRenderer:
@@ -8460,6 +8460,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: oPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 657681618310327955, guid: 54e8f3327056ebb459f837ccc092d379,
+        type: 3}
+      propertyPath: m_TagString
+      value: MyPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 657681619026917479, guid: 54e8f3327056ebb459f837ccc092d379,
         type: 3}

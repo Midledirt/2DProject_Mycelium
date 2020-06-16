@@ -60,7 +60,7 @@ public class scrPickups : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && isactive == true)
+        if (collision.tag == "MyPlayer" && isactive == true)
         {
             destroyPickup();
         }

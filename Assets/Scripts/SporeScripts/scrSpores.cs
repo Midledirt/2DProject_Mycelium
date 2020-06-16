@@ -42,7 +42,7 @@ public class scrSpores : MonoBehaviour
         myColor.a = 0.0f;
         gameOverTextColor.a = 0.0f;
         //Find the player
-        thePlayer = GameObject.FindGameObjectWithTag("Player");
+        thePlayer = GameObject.FindGameObjectWithTag("MyPlayer");
         
         //Find all the pickups in the scene and store it in this list
         //PickupsInTheScene = GameObject.FindGameObjectsWithTag("Pickup");
