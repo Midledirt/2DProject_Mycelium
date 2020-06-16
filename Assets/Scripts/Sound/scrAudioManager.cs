@@ -32,6 +32,8 @@ public class scrAudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
+        //Play main theme
+        PlaySound("MenuTheme");
     }
     
     public void PlaySound(string name)
