@@ -68,15 +68,12 @@ public class scrPickups : MonoBehaviour
 
     public void destroyPickup()
     {
+        //Play soundeffect
+        FindObjectOfType<scrAudioManager>().PlaySound("PickupItem");
         //Turn off the sprite renderer
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         //print("hit the player");
         timer.GetComponent<scrLevelTimer>().currentTime -= secondsGained;
-
-        //Play sound
-
-        //PLay awesome animation
-
         //Turn pickup off
         isactive = false;
         //Object.Destroy(pickup);

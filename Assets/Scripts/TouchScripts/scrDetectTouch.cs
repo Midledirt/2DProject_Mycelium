@@ -129,10 +129,10 @@ public class scrDetectTouch : MonoBehaviour
                 {
                     touchedObject.GetComponent<scrActivatePlatform>().isTouched = true;
                 }
-                else if (touchedObject.tag == "Pickup")
+                /*else if (touchedObject.tag == "Pickup")
                 {
                     touchedObject.GetComponent<scrText>().isTouched = true;
-                }
+                }*/
                 else if (touchedObject.tag == "Destructable")
                 {
                     touchedObject.GetComponent<scrTouchToDestroy>().isTouched = true;
